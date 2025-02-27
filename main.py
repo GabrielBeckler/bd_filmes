@@ -40,12 +40,13 @@ def buscar_filme(titulo: str):
         filmes = cursor.fetchall()
         if filmes:
             for filme in filmes:
+                assistido = "Sim" if filme[4] else "Não"
                 print("====================================================================================================")
                 print(f"""ID: {filme[0]}
 Nome: {filme[1]}
 Gênero: {filme[2]}
 Ano: {filme[3]}
-Assistido: {filme[4]}
+Assistiedo: {assistido}
 Avaliação: {filme[5]}""")
         else:
             print("Nenhum filme encontrado com o título informado.")
